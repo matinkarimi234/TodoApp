@@ -1,15 +1,12 @@
 import React from 'react';
 import './TaskList.css'
 import {TaskItem} from '../'
-const TaskList = ()=>{
+const TaskList = ({tasks,deleteTask})=>{
 
     return (
       <div className="TaskList">
         <ul>
-          <TaskItem />
-          <TaskItem />
-          <TaskItem />
-          <TaskItem />
+          {tasks.map(task=> <TaskItem task={task} deleteTask={deleteTask} />)}
         </ul>
       </div>
     )

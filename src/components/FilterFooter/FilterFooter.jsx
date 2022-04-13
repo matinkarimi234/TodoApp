@@ -1,13 +1,13 @@
 import React from 'react';
 import './FilterFooter.css';
 
-const FilterFooter = ()=>{
+const FilterFooter = ({tasks})=>{
 
     return (
         // BEM ClassNames
         <div className="FilterFooter">
         <div className="FilterFooter__countItems">
-          2 items left
+          {tasks.length} items left
         </div>
         <div className="FilterFooter__filters">
           <ul>

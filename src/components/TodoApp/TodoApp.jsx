@@ -15,8 +15,10 @@ const TodoApp = ()=>{
         let storedTasks = localStorage.getItem('tasks')
         if(storedTasks){
             storedTasks = JSON.parse(storedTasks)
+        }else{
+            storedTasks = []
         }
-        setTasks(setTasks)
+        setTasks(storedTasks)
     },[])
 
     useEffect(()=>{
@@ -65,7 +67,7 @@ const TodoApp = ()=>{
         <div className="TodoApp">
             <AddTaskForm addTask={addTask} />
             <TaskList 
-            tasks={tasks} 
+            tasks={filteredTasks} 
             deleteTask={deleteTask}
             handleChangeStatus = {handleChangeStatus}
             />

@@ -11,8 +11,7 @@ const AddTaskForm = ({addTask})=>{
 
     const handleSubmit = (event)=>{
       if (event) event.preventDefault();
-      if(!value || value === "")
-      {
+      if(!value || value === ""){
         return
       }
       addTask(value)
